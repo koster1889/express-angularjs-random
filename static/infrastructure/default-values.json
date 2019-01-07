@@ -1,0 +1,5 @@
+{
+    "SOME.KEY": "Some default value",
+    "SOME.OTHER.KEY": "Some other default value",
+    "ANOTHER.KEY": "Lorem haxxum"
+}

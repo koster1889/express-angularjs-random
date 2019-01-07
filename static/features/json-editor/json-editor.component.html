@@ -1,0 +1,45 @@
+<div class="container-fluid">
+    <h1>Editor</h1>
+    <div class="row">
+        <form class="col-md-12">
+            <div class="form-group">
+                <label for="freeTexxt">Filter</label>
+                <input type="text" class="form-control" id="freeTexxt" ng-model="$ctrl.filter.freeText">
+            </div>
+            <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="custom" ng-model="$ctrl.filter.overridesOnly">
+                <label for="custom">Only show overridden</label>
+            </div>
+            <hr>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Property</th>
+                        <th scope="col">Default Value</th>
+                        <th scope="col">Override</th>
+                        <th scope="col">Override value</th>
+                    </tr>
+                </thead>
+                <tr ng-repeat="item in $ctrl.items" ng-if="$ctrl.filter(item)">
+                    <th scope="row">{{item.key}}</th>
+                    <td>{{item.json}}</b>
+                    <td><input type="checkbox" ng-model="item.override"></td>
+                    <td><input type="text" ng-if="item.override" ng-model="item.jsonOverride"></td>
+                </tr>
+            </table>
+        </form>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label>Local Storage</label>
+                    <button ng-click="$ctrl.loadFromLocalStorage()">Load</button>
+                    <button ng-click="$ctrl.saveToLocalStorage()">Save</button>
+                </div>
+                <div class="form-group">
+                    <label>File Download</label>
+                    <downloader content-factory="$ctrl.getOverrides" file-name="'overrides.json'" label="'Get as file'"></downloader>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

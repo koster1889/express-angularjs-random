@@ -1,0 +1,4 @@
+{
+    "SOME.KEY": "Some overridden value",
+    "SOME.NEW.KEY": "Override without default value (Not appearing in editor...)"
+}
