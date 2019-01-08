@@ -3,17 +3,18 @@
 Run application:
 
 ```
+npm install
 node index.js
 ```
 
 Run tests:
 
 ```
-# webdriver-manager update
-webdriver-manager start
+# npm run webdriver-update
+npm run webdriver-start
 
-protractor cucumber-protractor.conf.js # Cucumber features
-protractor conf.js                     # Regular jasmine tests
+npm run cucumber # Cucumber protractor tests
+npm run protractor # Regular jasmine protractor tests
 ```
 
 TODO: Build executables
